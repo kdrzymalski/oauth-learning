@@ -1,0 +1,19 @@
+{
+  "name": "learning-oauth",
+  "version": "1.0.0",
+  "description": "An Express.js application for GitHub OAuth",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
