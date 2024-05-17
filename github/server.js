@@ -27,7 +27,7 @@ const githubClientID = process.env.GITHUB_CLIENT_ID
 const githubClientSecret = process.env.GITHUB_CLIENT_SECRET
 const authorizeURL = 'https://github.com/login/oauth/authorize'
 const tokenURL = 'https://github.com/login/oauth/access_token'
-const apiURLBase = 'https://api.github.com/'
+const apiURLBase = 'https://api.github.com'
 
 app.use((req, res, next) => {
     res.locals.baseURL = `https://${req.hostname}${req.originalUrl}`
@@ -109,7 +109,7 @@ app.get('/callback', async (req, res) => {
 
 app.get('/repos', async (req, res) => {
     if (req.session.access_token) {
-        const apiUrl = 'https://api.github.com/user/repos'
+        const apiUrl = `${apiURLBase}/user/repos`
         const params = {
             sort: 'created',
             direction: 'desc',
